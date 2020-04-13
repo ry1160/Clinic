@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.project.mapper.templateMapper.TemplateMapper">
+    <resultMap id="getAllTemplateResult" type="template">
+        <id column="id" property="id"></id>
+        <result column="templateName" property="templateName"></result>
+        <result column="templateNo" property="templateNo"></result>
+        <result column="templatePermission" property="templatePermission"></result>
+        <result column="createDate" property="createDate"></result>
+        <result column="templateDescription" property="templateDescription"></result>
+        <association property="prescriptionType" select="getPrescriptionType" column="prescriptionTypeId"></association>
+        <association property="employee" column="createPeopleId" select="getEmployee"></association>
+        <collection property="diagnosisTypeList" column="id" select="getDiagnosisTypeList"></collection>
+    </resultMap>
+    <select id="getAllTemplate" resultMap="getAllTemplateResult">
+        select * from template
+        <where>
+            <if test="prescriptionTypeId != null and prescriptionTypeId != ''">
+                and prescriptionTypeId=#{prescriptionTypeId}
+            </if>
+            <if test="templatePermission != null and templatePermission != ''">
+                and templatePermission=#{templatePermission}
+            </if>
+            <if test="templateNoOrName != null and templateNoOrName != ''">
+                and templateNo like concat('%',#{templateNoOrName},'%') or templateName like concat('%',#{templateNoOrName},'%')
+            </if>
+        </where>
+        limit #{pageNo},#{pageSize}
+    </select>
+    <select id="getPrescriptionType" resultType="prescriptionType">
+        select * from prescriptionType where id=#{prescriptionTypeId}
+    </select>
+    <select id="getEmployee" resultType="employee">
+        select * from employee
+        where id=#{createPeopleId}
+    </select>
+    <select id="getDiagnosisTypeList" resultType="diagnosisType">
+        select * from diagnosistype d
+        left join template_diagnosistype td on td.diagnosisTypeId=d.id
+        where td.templateId=#{id}
+    </select>
+</mapper>
