@@ -48,18 +48,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
         return authorities;
     }
-/*
-    public static void main(String[] args) {
-        try {
-            String pwd = "046118";
-            String[] str = ConfigTools.genKeyPair(512);
-            System.out.println("privateKey:" + str[0]);
-            System.out.println("publicKey:" + str[1]);
-            pwd = ConfigTools.encrypt(str[0], pwd);
-            System.out.println("加密后的password:" + pwd);
-            System.out.println("解密后的password:" + ConfigTools.decrypt(str[1],pwd));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
 }
