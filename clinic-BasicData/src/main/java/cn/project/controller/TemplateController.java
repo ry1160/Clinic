@@ -1,12 +1,14 @@
 package cn.project.controller;
 
 
+import cn.project.entity.Template;
 import cn.project.service.templateService.TemplateService;
 import cn.project.utils.Response;
 import cn.project.utils.ResponseEnum;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,5 +32,18 @@ public class TemplateController {
         map.put("templatePermission",templatePermission);
         map.put("templateNoOrName",templateNoOrName);
         return new Response(ResponseEnum.SUCCESS).setResponseBody(templateService.getAllTemplate(map));
+    }
+
+    @GetMapping("{id}")
+    @ApiOperation(value = "获取模板下的处方药品",notes = "根据模板id去获取处方药品信息")
+    public Response getTemplateById(@PathVariable Integer id){
+        Template template = templateService.getTemplateById(id);
+        if(template.getPrescriptionTypeId() == 1){
+            return new Response(ResponseEnum.SUCCESS).setResponseBody(templateService.getPrescriptionMedicineX(id));
+        }else if(template.getPrescriptionTypeId() == 2){
+            return new Response(ResponseEnum.SUCCESS).setResponseBody(templateService.getPrescriptionMedicineZ(id));
+        }else{
+            return new Response(ResponseEnum.SUCCESS).setResponseBody(templateService.getPrescriptionMedicineC(id));
+        }
     }
 }

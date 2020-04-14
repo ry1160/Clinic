@@ -15,11 +15,10 @@
     <modules>
         <module>oauth2-server</module>
         <module>oauth2-resource</module>
-        <module>oauth2-client</module>
-        <module>biz</module>
         <module>common</module>
         <module>prescription</module>
         <module>clinic-BasicData</module>
+        <module>clinic-Medicine</module>
     </modules>
     <dependencies>
         <dependency>

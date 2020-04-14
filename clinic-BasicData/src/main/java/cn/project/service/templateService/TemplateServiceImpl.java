@@ -1,5 +1,8 @@
 package cn.project.service.templateService;
 
+import cn.project.entity.PrescriptionMedicineC;
+import cn.project.entity.PrescriptionMedicineX;
+import cn.project.entity.PrescriptionMedicineZ;
 import cn.project.entity.Template;
 import cn.project.mapper.templateMapper.TemplateMapper;
 import com.github.pagehelper.PageHelper;
@@ -20,5 +23,25 @@ public class TemplateServiceImpl implements TemplateService {
         List<Template> list = templateMapper.getAllTemplate(map);
         PageInfo<Template> pageInfo = new PageInfo<>(list);
         return pageInfo;
+    }
+
+    @Override
+    public Template getTemplateById(Integer id) {
+        return templateMapper.getTemplateById(id);
+    }
+
+    @Override
+    public List<PrescriptionMedicineX> getPrescriptionMedicineX(Integer templateId) {
+        return templateMapper.getPrescriptionMedicineX(templateId);
+    }
+
+    @Override
+    public List<PrescriptionMedicineZ> getPrescriptionMedicineZ(Integer templateId) {
+        return templateMapper.getPrescriptionMedicineZ(templateId);
+    }
+
+    @Override
+    public List<PrescriptionMedicineC> getPrescriptionMedicineC(Integer templateId) {
+        return templateMapper.getPrescriptionMedicineC(templateId);
     }
 }

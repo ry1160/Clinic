@@ -29,7 +29,7 @@
         </where>
     </select>
     <select id="getPrescriptionType" resultType="prescriptionType">
-        select * from prescriptionType where id=#{prescriptionTypeId}
+        select * from `prescriptiondata`.prescriptionType where id=#{prescriptionTypeId}
     </select>
     <select id="getEmployee" resultType="employee">
         select * from employee
@@ -39,5 +39,40 @@
         select * from diagnosistype d
         left join template_diagnosistype td on td.diagnosisTypeId=d.id
         where td.templateId=#{id}
+    </select>
+    <select id="getTemplateById" resultType="template">
+        select * from template where id = #{id}
+    </select>
+
+<!--
+    模板下的处方
+-->
+    <select id="getPrescriptionMedicineX" resultType="prescriptionMedicineX">
+        select w.*,m.medicineName,mu.usageName,pt.prescriptionTypeName from `prescriptiondata`.westernmedicineprescription w
+        left join template_westernmedicineprescription tw
+        on tw.westernMedicinePrescriptionId=w.id
+        left join `medicinedata`.medicine m on w.medicineId=m.id
+        left join `medicinedata`.medicineusage mu on mu.id = w.usageId
+        left join `prescriptiondata`.prescriptiontype pt on pt.id=w.prescriptionTypeId
+        where tw.templateId=#{templateId}
+    </select>
+
+    <select id="getPrescriptionMedicineZ" resultType="prescriptionMedicineZ">
+        select c.*,m.medicineName,mu.usageName,pt.prescriptionTypeName from `prescriptiondata`.chinesemedicineprescription c
+        left join template_chinesemedicineprescription tc
+        on tc.chinesemedicineprescriptionId=c.id
+        left join `medicinedata`.medicine m on c.medicineId=m.id
+        left join `medicinedata`.medicineusage mu on mu.id = c.usageId
+        left join `prescriptiondata`.prescriptiontype pt on pt.id=c.prescriptionTypeId
+        where tc.templateId=#{templateId}
+    </select>
+
+    <select id="getPrescriptionMedicineC" resultType="prescriptionMedicineC">
+        select c.*,ci.itemName as checkItemName,pt.prescriptionTypeName from `prescriptiondata`.checkitemprescription c
+        left join template_checkitemprescription tc
+        on tc.checkItemPrescriptionId=c.id
+        left join `medicinedata`.checkitem ci on ci.id=c.checkItemId
+        left join `prescriptiondata`.prescriptiontype pt on pt.id=c.prescriptionTypeId
+        where tc.templateId=#{templateId}
     </select>
 </mapper>

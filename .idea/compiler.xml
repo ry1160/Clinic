@@ -8,18 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="auth" />
-        <module name="biz" />
         <module name="prescription" />
-        <module name="oauth2-client" />
+        <module name="clinic-Medicine" />
         <module name="oauth2-resource" />
         <module name="clinic-BasicData" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="biz" target="1.8" />
       <module name="biz-parent" target="1.8" />
       <module name="ChargeManagement" target="1.8" />
       <module name="DrugAdministration" target="1.8" />
       <module name="EncounterMgmt" target="1.8" />
+      <module name="oauth2-client" target="1.8" />
       <module name="RegistrationManagement" target="1.8" />
       <module name="SystemSetup" target="1.8" />
     </bytecodeTargetLevel>
@@ -35,6 +36,7 @@
       <module name="biz" options="-parameters" />
       <module name="biz-parent" options="-parameters" />
       <module name="clinic-BasicData" options="-parameters" />
+      <module name="clinic-Medicine" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="oauth2-client" options="-parameters" />
       <module name="oauth2-resource" options="-parameters" />

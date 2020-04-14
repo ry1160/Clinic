@@ -8,12 +8,21 @@ public class Template {
     private Integer id;
     private String templateName;
     private String templateNo;
+    private Integer prescriptionTypeId;
     private PrescriptionType prescriptionType;
     private List<DiagnosisType> diagnosisTypeList;
     private Integer templatePermission;
     private Date createDate;
     private Employee employee;
     private String templateDescription;
+
+    public Integer getPrescriptionTypeId() {
+        return prescriptionTypeId;
+    }
+
+    public void setPrescriptionTypeId(Integer prescriptionTypeId) {
+        this.prescriptionTypeId = prescriptionTypeId;
+    }
 
     public Integer getId() {
         return id;
