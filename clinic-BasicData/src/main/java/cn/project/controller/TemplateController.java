@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
-@Api(value = "处方模板控制器")
+@Api(tags = "处方模板控制器")
 @RestController
 @RequestMapping("/template")
 public class TemplateController {

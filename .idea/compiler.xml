@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
         <module name="auth" />
-        <module name="prescription" />
+        <module name="clinic-Prescription" />
         <module name="clinic-Medicine" />
         <module name="oauth2-resource" />
         <module name="clinic-BasicData" />
@@ -37,10 +37,10 @@
       <module name="biz-parent" options="-parameters" />
       <module name="clinic-BasicData" options="-parameters" />
       <module name="clinic-Medicine" options="-parameters" />
+      <module name="clinic-Prescription" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="oauth2-client" options="-parameters" />
       <module name="oauth2-resource" options="-parameters" />
-      <module name="prescription" options="-parameters" />
     </option>
   </component>
 </project>

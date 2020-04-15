@@ -51,6 +51,7 @@ public class HttpClientHelper {
 					return objectMapper.readValue(result,Response.class);
 				}
 			}
+			System.out.println(result);
 		} catch(Exception ex) {
 			ex.printStackTrace();
 		} finally {
