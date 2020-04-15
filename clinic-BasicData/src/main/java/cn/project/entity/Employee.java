@@ -1,5 +1,7 @@
 package cn.project.entity;
 
+import java.util.List;
+
 //员工表
 public class Employee {
     private Integer id;
@@ -14,7 +16,7 @@ public class Employee {
     private String idCard;
     private String addressDetails;
     private Integer roleId;
-    private Role role;
+    private List<Role> roleList;
     private Integer departmentId;
     private Department department;
     private String password;
@@ -108,12 +110,12 @@ public class Employee {
         this.addressDetails = addressDetails;
     }
 
-    public Role getRole() {
-        return role;
+    public List<Role> getRoleList() {
+        return roleList;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
     }
 
     public Department getDepartment() {
