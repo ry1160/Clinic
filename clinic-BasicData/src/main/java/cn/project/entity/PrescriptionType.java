@@ -1,6 +1,9 @@
 package cn.project.entity;
+
+import java.io.Serializable;
+
 //处方类型表
-public class PrescriptionType {
+public class PrescriptionType implements Serializable {
     private Integer id;
     private String prescriptionTypeName;
 

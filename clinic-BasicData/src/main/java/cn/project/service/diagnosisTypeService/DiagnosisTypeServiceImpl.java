@@ -1,7 +1,9 @@
-package cn.project.service.DiagnosisTypeService;
+package cn.project.service.diagnosisTypeService;
 
 import cn.project.entity.DiagnosisType;
 import cn.project.mapper.diagnosisTypeMapper.DiagnosisTypeMapper;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

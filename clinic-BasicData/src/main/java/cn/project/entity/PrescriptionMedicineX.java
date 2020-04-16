@@ -1,6 +1,8 @@
 package cn.project.entity;
 
-public class PrescriptionMedicineX {
+import java.io.Serializable;
+
+public class PrescriptionMedicineX implements Serializable {
     private Integer id;
     private Integer medicineId;
     private String medicineName;
@@ -12,7 +14,7 @@ public class PrescriptionMedicineX {
     private String totalDosage;
     private Integer prescriptionTypeId;
     private String prescriptionTypeName;
-    private double unitPrice;
+    private Long unitPrice;
 
     public Integer getId() {
         return id;
@@ -30,6 +32,14 @@ public class PrescriptionMedicineX {
         this.medicineId = medicineId;
     }
 
+    public String getMedicineName() {
+        return medicineName;
+    }
+
+    public void setMedicineName(String medicineName) {
+        this.medicineName = medicineName;
+    }
+
     public String getSingleDose() {
         return singleDose;
     }
@@ -44,6 +54,14 @@ public class PrescriptionMedicineX {
 
     public void setUsageId(Integer usageId) {
         this.usageId = usageId;
+    }
+
+    public String getUsageName() {
+        return usageName;
+    }
+
+    public void setUsageName(String usageName) {
+        this.usageName = usageName;
     }
 
     public String getFrequency() {
@@ -86,27 +104,11 @@ public class PrescriptionMedicineX {
         this.prescriptionTypeName = prescriptionTypeName;
     }
 
-    public String getMedicineName() {
-        return medicineName;
+    public Long getUnitPrice() {
+        return unitPrice/100;
     }
 
-    public void setMedicineName(String medicineName) {
-        this.medicineName = medicineName;
-    }
-
-    public String getUsageName() {
-        return usageName;
-    }
-
-    public void setUsageName(String usageName) {
-        this.usageName = usageName;
-    }
-
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(double unitPrice) {
+    public void setUnitPrice(Long unitPrice) {
         this.unitPrice = unitPrice;
     }
 }

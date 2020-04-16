@@ -1,10 +1,11 @@
 package cn.project.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 //处方模板表
-public class Template {
+public class Template implements Serializable {
     private Integer id;
     private String templateName;
     private String templateNo;

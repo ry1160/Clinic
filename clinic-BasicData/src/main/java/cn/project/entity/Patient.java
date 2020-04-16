@@ -1,8 +1,9 @@
 package cn.project.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Patient {
+public class Patient implements Serializable {
     private Integer id;
     private String patientName;
     private String patientNo;

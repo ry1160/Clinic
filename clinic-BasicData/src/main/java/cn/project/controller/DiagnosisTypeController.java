@@ -1,6 +1,6 @@
 package cn.project.controller;
 
-import cn.project.service.DiagnosisTypeService.DiagnosisTypeService;
+import cn.project.service.diagnosisTypeService.DiagnosisTypeService;
 import cn.project.utils.Response;
 import cn.project.utils.ResponseEnum;
 import io.swagger.annotations.Api;

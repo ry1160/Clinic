@@ -1,4 +1,4 @@
-package cn.project.service.DiagnosisTypeService;
+package cn.project.service.diagnosisTypeService;
 
 import cn.project.entity.DiagnosisType;
 

@@ -1,6 +1,8 @@
 package cn.project.entity;
 
-public class Medicine {
+import java.io.Serializable;
+
+public class Medicine implements Serializable {
     private Integer id;
     private String medicineNo;
     private String barCode;
@@ -15,8 +17,8 @@ public class Medicine {
     private Integer medicineStatus;
     private String medicineDescription;
     private String note;
-    private double purchasePrice;
-    private double retailPrice;
+    private Long purchasePrice;
+    private Long retailPrice;
     private Integer manufacturerId;
     private String manufacturerName;
 
@@ -132,19 +134,19 @@ public class Medicine {
         this.note = note;
     }
 
-    public double getPurchasePrice() {
-        return purchasePrice;
+    public Long getPurchasePrice() {
+        return purchasePrice/100;
     }
 
-    public void setPurchasePrice(double purchasePrice) {
+    public void setPurchasePrice(Long purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 
-    public double getRetailPrice() {
-        return retailPrice;
+    public Long getRetailPrice() {
+        return retailPrice/100;
     }
 
-    public void setRetailPrice(double retailPrice) {
+    public void setRetailPrice(Long retailPrice) {
         this.retailPrice = retailPrice;
     }
 

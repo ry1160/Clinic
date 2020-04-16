@@ -1,18 +1,20 @@
 package cn.project.entity;
 
 
-public class PrescriptionMedicineC {
+import java.io.Serializable;
+
+public class PrescriptionMedicineC implements Serializable {
     private Integer id;
     private Integer checkItemId;
     private String checkItemName;
     private String part;
     private Integer quantity;
     private Integer itemTypeId;
-    private double amount;
+    private Long amount;
     private String remarks;
     private Integer prescriptionTypeId;
     private String prescriptionTypeName;
-    private double unitPrice;
+    private Long unitPrice;
 
     public Integer getId() {
         return id;
@@ -62,11 +64,11 @@ public class PrescriptionMedicineC {
         this.itemTypeId = itemTypeId;
     }
 
-    public double getAmount() {
-        return amount;
+    public Long getAmount() {
+        return amount/100;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
 
@@ -94,11 +96,11 @@ public class PrescriptionMedicineC {
         this.prescriptionTypeName = prescriptionTypeName;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
+    public Long getUnitPrice() {
+        return unitPrice/100;
     }
 
-    public void setUnitPrice(double unitPrice) {
+    public void setUnitPrice(Long unitPrice) {
         this.unitPrice = unitPrice;
     }
 }

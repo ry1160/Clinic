@@ -5,5 +5,10 @@
 <mapper namespace="cn.project.mapper.employeeMapper.EmployeeMapper">
     <select id="getAllEmployee" resultType="employee">
         select * from employee
+        <where>
+            <if test="id != null">
+                and departmentId=#{id}
+            </if>
+        </where>
     </select>
 </mapper>

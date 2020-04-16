@@ -1,6 +1,9 @@
 package cn.project.entity;
+
+import java.io.Serializable;
+
 //科室表
-public class Department {
+public class Department implements Serializable {
     private Integer id;
     private String departmentName;
 

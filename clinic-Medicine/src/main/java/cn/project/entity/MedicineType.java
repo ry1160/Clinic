@@ -1,6 +1,8 @@
 package cn.project.entity;
 
-public class MedicineType {
+import java.io.Serializable;
+
+public class MedicineType implements Serializable {
     private Integer id;
     private String medicineTypeName;
 

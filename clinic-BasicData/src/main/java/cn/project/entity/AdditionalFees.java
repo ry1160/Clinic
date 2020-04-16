@@ -1,9 +1,11 @@
 package cn.project.entity;
 
-public class AdditionalFees {
+import java.io.Serializable;
+
+public class AdditionalFees implements Serializable {
     private Integer id;
     private String additionalFeesName;
-    private double price;
+    private Long price;
 
     public Integer getId() {
         return id;
@@ -21,11 +23,11 @@ public class AdditionalFees {
         this.additionalFeesName = additionalFeesName;
     }
 
-    public double getPrice() {
-        return price;
+    public Long getPrice() {
+        return price/100;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Long price) {
         this.price = price;
     }
 }

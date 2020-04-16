@@ -1,9 +1,9 @@
-package cn.project.mapper.MedicalAdviceMapper;
+package cn.project.service.medicalAdviceService;
 
 import cn.project.entity.MedicalAdvice;
 
 import java.util.List;
 
-public interface MedicalAdviceMapper {
+public interface MedicalAdviceService {
     List<MedicalAdvice> getAllMedicalAdvice();
 }

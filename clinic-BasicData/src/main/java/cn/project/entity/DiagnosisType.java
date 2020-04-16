@@ -1,6 +1,9 @@
 package cn.project.entity;
+
+import java.io.Serializable;
+
 //诊断类型表
-public class DiagnosisType {
+public class DiagnosisType implements Serializable {
     private Integer id;
     private String diagnosisTypeName;
 

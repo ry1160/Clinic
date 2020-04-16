@@ -1,6 +1,9 @@
 package cn.project.entity;
+
+import java.io.Serializable;
+
 //角色表
-public class Role {
+public class Role implements Serializable {
     private Integer id;
     private String roleName;
 

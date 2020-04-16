@@ -1,6 +1,8 @@
 package cn.project.entity;
 
-public class PrescriptionMedicineZ {
+import java.io.Serializable;
+
+public class PrescriptionMedicineZ implements Serializable {
     private Integer id;
     private Integer medicineId;
     private String medicineName;
@@ -13,8 +15,8 @@ public class PrescriptionMedicineZ {
     private Integer prescriptionTypeId;
     private String prescriptionTypeName;
     private Integer agent;
-    private double unitPrice;
-    private double amount;
+    private Long unitPrice;
+    private Long amount;
 
     public Integer getId() {
         return id;
@@ -112,19 +114,19 @@ public class PrescriptionMedicineZ {
         this.agent = agent;
     }
 
-    public double getAmount() {
-        return amount;
+    public Long getUnitPrice() {
+        return unitPrice/100;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
-    }
-
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public void setUnitPrice(double unitPrice) {
+    public void setUnitPrice(Long unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public Long getAmount() {
+        return amount/100;
+    }
+
+    public void setAmount(Long amount) {
+        this.amount = amount;
     }
 }

@@ -8,4 +8,7 @@
         left join member m on m.id=p.membershipLevelId
         where p.id = #{id}
     </select>
+    <select id="getAllPatient" resultType="patient">
+        select * from patient;
+    </select>
 </mapper>

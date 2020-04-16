@@ -1,6 +1,8 @@
 package cn.project.entity;
 
-public class CheckItemType {
+import java.io.Serializable;
+
+public class CheckItemType implements Serializable {
     private Integer id;
     private String itemTypeName;
 

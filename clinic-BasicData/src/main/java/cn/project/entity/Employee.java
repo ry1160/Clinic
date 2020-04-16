@@ -1,9 +1,10 @@
 package cn.project.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 //员工表
-public class Employee {
+public class Employee implements Serializable {
     private Integer id;
     private String employeeNo;
     private String employeeName;

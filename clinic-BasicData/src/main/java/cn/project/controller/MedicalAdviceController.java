@@ -1,6 +1,6 @@
 package cn.project.controller;
 
-import cn.project.service.MedicalAdviceService.MedicalAdviceService;
+import cn.project.service.medicalAdviceService.MedicalAdviceService;
 import cn.project.utils.Response;
 import cn.project.utils.ResponseEnum;
 import io.swagger.annotations.Api;

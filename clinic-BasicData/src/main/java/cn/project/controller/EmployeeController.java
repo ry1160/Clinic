@@ -20,8 +20,8 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @GetMapping("getAllEmployee")
-    @ApiOperation(value = "获取所有员工")
-    public Response getAllEmployee(){
-        return new Response(ResponseEnum.SUCCESS).setResponseBody(employeeService.getAllEmployee());
+    @ApiOperation(value = "获取该科室下的所有员工")
+    public Response getAllEmployee(Integer id){
+        return new Response(ResponseEnum.SUCCESS).setResponseBody(employeeService.getAllEmployee(id));
     }
 }

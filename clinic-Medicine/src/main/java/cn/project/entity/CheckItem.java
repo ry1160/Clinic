@@ -1,13 +1,15 @@
 package cn.project.entity;
 
 
-public class CheckItem {
+import java.io.Serializable;
+
+public class CheckItem implements Serializable {
     private Integer id;
     private String itemNo;
     private String itemName;
     private String pinYinCode;
-    private double costPrice;
-    private double retailPrice;
+    private Long costPrice;
+    private Long retailPrice;
     private Integer itemTypeId;
     private String itemTypeName;
     private String part;
@@ -16,14 +18,6 @@ public class CheckItem {
     private String remarks;
     private Integer prescriptionTypeId;
     private String prescriptionTypeName;
-
-    public String getPinYinCode() {
-        return pinYinCode;
-    }
-
-    public void setPinYinCode(String pinYinCode) {
-        this.pinYinCode = pinYinCode;
-    }
 
     public Integer getId() {
         return id;
@@ -49,19 +43,27 @@ public class CheckItem {
         this.itemName = itemName;
     }
 
-    public double getCostPrice() {
-        return costPrice;
+    public String getPinYinCode() {
+        return pinYinCode;
     }
 
-    public void setCostPrice(double costPrice) {
+    public void setPinYinCode(String pinYinCode) {
+        this.pinYinCode = pinYinCode;
+    }
+
+    public Long getCostPrice() {
+        return costPrice/100;
+    }
+
+    public void setCostPrice(Long costPrice) {
         this.costPrice = costPrice;
     }
 
-    public double getRetailPrice() {
-        return retailPrice;
+    public Long getRetailPrice() {
+        return retailPrice/100;
     }
 
-    public void setRetailPrice(double retailPrice) {
+    public void setRetailPrice(Long retailPrice) {
         this.retailPrice = retailPrice;
     }
 

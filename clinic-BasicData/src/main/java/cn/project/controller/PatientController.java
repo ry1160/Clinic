@@ -24,4 +24,10 @@ public class PatientController {
     public Response getAllAdditionalFees(Integer id){
         return new Response(ResponseEnum.SUCCESS).setResponseBody(patientService.getPatientById(id));
     }
+
+    @GetMapping("/getAllPatient")
+    @ApiOperation(value = "获取所有患者信息")
+    public Response getAllPatient(){
+        return new Response(ResponseEnum.SUCCESS).setResponseBody(patientService.getAllPatient());
+    }
 }

@@ -5,5 +5,5 @@ import cn.project.entity.Employee;
 import java.util.List;
 
 public interface EmployeeService {
-    List<Employee> getAllEmployee();
+    List<Employee> getAllEmployee(Integer id);
 }

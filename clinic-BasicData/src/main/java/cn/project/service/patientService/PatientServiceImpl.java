@@ -3,9 +3,12 @@ package cn.project.service.patientService;
 import cn.project.entity.Patient;
 import cn.project.mapper.patientMapper.PatientMapper;
 import cn.project.utils.Response;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class PatientServiceImpl implements PatientService {
@@ -14,5 +17,10 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Patient getPatientById(Integer id) {
         return patientMapper.getPatientById(id);
+    }
+
+    @Override
+    public List<Patient> getAllPatient() {
+        return patientMapper.getAllPatient();
     }
 }

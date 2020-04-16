@@ -22,4 +22,10 @@ public class APIPatientController {
     public Response getPatientById(Integer id){
         return httpClientHelper.get("http://localhost:8082/patient/getPatientById?id="+id);
     }
+
+    @GetMapping("/getAllPatient")
+    @ApiOperation(value = "负责调用基本数据模块中的患者控制器(查询所有患者信息)")
+    public Response getAllPatient(){
+        return httpClientHelper.get("http://localhost:8082/patient/getAllPatient");
+    }
 }

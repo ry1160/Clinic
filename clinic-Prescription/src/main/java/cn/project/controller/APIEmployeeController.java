@@ -19,7 +19,7 @@ public class APIEmployeeController {
 
     @GetMapping("/getAllEmployee")
     @ApiOperation(value = "负责调用基本数据模块中的员工控制器")
-    public Response getAdditionalFees(){
-        return httpClientHelper.get("http://localhost:8082/employee/getAllEmployee");
+    public Response getAdditionalFees(Integer id){
+        return httpClientHelper.get("http://localhost:8082/employee/getAllEmployee?id="+id);
     }
 }
