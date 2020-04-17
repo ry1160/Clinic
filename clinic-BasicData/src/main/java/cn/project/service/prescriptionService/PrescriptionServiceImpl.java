@@ -2,8 +2,6 @@ package cn.project.service.prescriptionService;
 
 import cn.project.entity.PrescriptionType;
 import cn.project.mapper.prescriptionMapper.PrescriptionMapper;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

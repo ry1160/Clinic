@@ -21,7 +21,7 @@
                 and medicineTypeId = #{medicineTypeId}
             </if>
             <if test="nameOrPinYin != null and nameOrPinYin != ''">
-                and medicineName like concat('%',#{nameOrPinYin},'%') or pinYinCode like concat('%',#{nameOrPinYin},'%')
+                and (medicineName like concat('%',#{nameOrPinYin},'%') or pinYinCode like concat('%',#{nameOrPinYin},'%'))
             </if>
         </where>
     </select>
@@ -33,7 +33,7 @@
                 and itemTypeId = #{itemTypeId}
             </if>
             <if test="nameOrPinYin != null and nameOrPinYin != ''">
-                and itemName like concat('%',#{nameOrPinYin},'%') or pinYinCode like concat('%',#{nameOrPinYin},'%')
+                and (itemName like concat('%',#{nameOrPinYin},'%') or pinYinCode like concat('%',#{nameOrPinYin},'%'))
             </if>
         </where>
     </select>

@@ -1,8 +1,7 @@
 package cn.project.mapper.prescriptionMapper;
 
 import cn.project.entity.PrescriptionType;
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.Cacheable;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 public interface PrescriptionMapper {

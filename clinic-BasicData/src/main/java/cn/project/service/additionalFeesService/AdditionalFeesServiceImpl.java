@@ -1,6 +1,7 @@
 package cn.project.service.additionalFeesService;
 
 import cn.project.entity.AdditionalFees;
+import cn.project.entity.Prescription_AdditionalFees;
 import cn.project.mapper.additionalFees.AdditionalFeesMapper;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
@@ -17,5 +18,10 @@ public class AdditionalFeesServiceImpl implements AdditionalFeesService {
     @Cacheable(key = "targetClass+':'+methodName")
     public List<AdditionalFees> getAllAdditionalFees() {
         return additionalFeesMapper.getAllAdditionalFees();
+    }
+
+    @Override
+    public int addAdditionalFees(Prescription_AdditionalFees prescription_additionalFees) {
+        return additionalFeesMapper.addAdditionalFees(prescription_additionalFees);
     }
 }

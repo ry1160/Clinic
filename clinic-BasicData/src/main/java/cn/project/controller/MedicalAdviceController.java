@@ -23,4 +23,16 @@ public class MedicalAdviceController {
     public Response getAllMedicalAdvice(){
         return new Response(ResponseEnum.SUCCESS).setResponseBody(medicalAdviceService.getAllMedicalAdvice());
     }
+
+    @GetMapping("addMedicalAdvice")
+    @ApiOperation(value = "新增医嘱")
+    public Response addMedicalAdvice(Integer prescriptionId,String medicalAdvice){
+        if(prescriptionId!=null&&medicalAdvice!=null){
+            String[] str = medicalAdvice.split(",");
+            for (int i = 0;i<str.length;i++){
+                medicalAdviceService.addMedicalAdvice(prescriptionId,Integer.parseInt(str[i]));
+            }
+        }
+        return new Response(ResponseEnum.SUCCESS);
+    }
 }

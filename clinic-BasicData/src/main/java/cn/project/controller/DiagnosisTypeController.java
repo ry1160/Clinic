@@ -23,4 +23,16 @@ public class DiagnosisTypeController {
     public Response getAllDiagnosisType(){
         return new Response(ResponseEnum.SUCCESS).setResponseBody(diagnosisTypeService);
     }
+
+    @GetMapping("addDiagnosisType")
+    @ApiOperation(value = "新增诊断类型")
+    public Response addDiagnosisType(Integer prescriptionId,String diagnosisType){
+        if(diagnosisType!=null&&prescriptionId!=null){
+            String[] str = diagnosisType.split(",");
+            for (int i = 0;i<str.length;i++){
+                diagnosisTypeService.addDiagnosisType(prescriptionId,Integer.parseInt(str[i]));
+            }
+        }
+        return new Response(ResponseEnum.SUCCESS);
+    }
 }

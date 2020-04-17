@@ -17,14 +17,14 @@
     <select id="getAllTemplate" resultMap="getAllTemplateResult">
         select * from template
         <where>
-            <if test="prescriptionTypeId != null and prescriptionTypeId != ''">
+            <if test="prescriptionTypeId != null">
                 and prescriptionTypeId=#{prescriptionTypeId}
             </if>
-            <if test="templatePermission != null and templatePermission != ''">
+            <if test="templatePermission != null">
                 and templatePermission=#{templatePermission}
             </if>
             <if test="templateNoOrName != null and templateNoOrName != ''">
-                and templateNo like concat('%',#{templateNoOrName},'%') or templateName like concat('%',#{templateNoOrName},'%')
+                and (templateNo like concat('%',#{templateNoOrName},'%') or templateName like concat('%',#{templateNoOrName},'%'))
             </if>
         </where>
     </select>

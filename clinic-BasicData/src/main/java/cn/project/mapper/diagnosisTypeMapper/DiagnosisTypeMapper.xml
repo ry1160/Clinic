@@ -6,4 +6,8 @@
     <select id="getAllDiagnosisType" resultType="diagnosisType">
         select * from diagnosistype
     </select>
+    <insert id="addDiagnosisType">
+        insert into `prescriptiondata`.prescription_diagnosis(id,diagnosisId,prescriptionId)
+        values (null,#{diagnosisTypeId},#{prescriptionId})
+    </insert>
 </mapper>

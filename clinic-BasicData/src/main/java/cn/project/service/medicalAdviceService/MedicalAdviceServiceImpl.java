@@ -18,4 +18,9 @@ public class MedicalAdviceServiceImpl implements MedicalAdviceService {
     public List<MedicalAdvice> getAllMedicalAdvice() {
         return medicalAdviceMapper.getAllMedicalAdvice();
     }
+
+    @Override
+    public int addMedicalAdvice(Integer prescriptionId, Integer medicalAdviceId) {
+        return medicalAdviceMapper.addMedicalAdvice(prescriptionId,medicalAdviceId);
+    }
 }

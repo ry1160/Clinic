@@ -6,4 +6,8 @@
     <select id="getAllMedicalAdvice" resultType="medicalAdvice">
         select * from medicaladvice
     </select>
+    <insert id="addMedicalAdvice">
+        insert into `prescriptiondata`.prescription_medicaladvice(id,medicalAdviceId,prescriptionId)
+        values (null,#{medicalAdviceId},#{prescriptionId})
+    </insert>
 </mapper>

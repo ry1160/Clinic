@@ -16,4 +16,9 @@ public class DiagnosisTypeServiceImpl implements DiagnosisTypeService {
     public List<DiagnosisType> getAllDiagnosisType() {
         return diagnosisTypeMapper.getAllDiagnosisType();
     }
+
+    @Override
+    public int addDiagnosisType(Integer prescriptionId, Integer diagnosisTypeId) {
+        return diagnosisTypeMapper.addDiagnosisType(prescriptionId,diagnosisTypeId);
+    }
 }

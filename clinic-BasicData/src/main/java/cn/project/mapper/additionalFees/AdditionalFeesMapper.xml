@@ -6,4 +6,8 @@
     <select id="getAllAdditionalFees" resultType="additionalFees">
         select * from additionalfees
     </select>
+    <insert id="addAdditionalFees">
+        insert  into `prescriptiondata`.prescription_additionalfees(id,prescriptionId,prescriptionTypeId,additionalFeesId,quantity)
+        values (null,#{p.prescriptionId},#{p.prescriptionTypeId},#{p.additionfeesId},#{p.quantity})
+    </insert>
 </mapper>

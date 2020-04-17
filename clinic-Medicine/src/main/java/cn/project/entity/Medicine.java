@@ -22,6 +22,7 @@ public class Medicine implements Serializable {
     private Integer manufacturerId;
     private String manufacturerName;
 
+
     public Integer getId() {
         return id;
     }

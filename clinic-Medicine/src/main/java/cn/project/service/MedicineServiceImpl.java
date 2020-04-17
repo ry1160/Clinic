@@ -31,7 +31,7 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     @Override
-    @Cacheable(key = "targetClass+':'+methodName+':'+ # prescriptionTypeId + # medicineTypeId")
+    @Cacheable(key = "targetClass+':'+methodName+':'+ # prescriptionTypeId + # medicineTypeId +':'+ # nameOrPinYin +':'+ # pageNo +':'+ # pageSize")
     public PageInfo<Medicine> getAllMedicine(Integer prescriptionTypeId,Integer medicineTypeId, String nameOrPinYin,Integer pageNo,Integer pageSize) {
         PageHelper.startPage(pageNo,pageSize);
         List<Medicine> list = medicineMapper.getAllMedicine(prescriptionTypeId,medicineTypeId,nameOrPinYin);
@@ -41,7 +41,7 @@ public class MedicineServiceImpl implements MedicineService {
     }
 
     @Override
-    @Cacheable(key = "targetClass+':'+methodName+':'+ # itemTypeId + # nameOrPinYin")
+    @Cacheable(key = "targetClass+':'+methodName+':'+ # itemTypeId + # nameOrPinYin+':'+# nameOrPinYin +':'+ # pageNo +':'+ # pageSize")
     public PageInfo<CheckItem> getAllCheckItem(Integer itemTypeId, String nameOrPinYin,Integer pageNo,Integer pageSize) {
         PageHelper.startPage(pageNo,pageSize);
         List<CheckItem> list = medicineMapper.getAllCheckItem(itemTypeId,nameOrPinYin);
