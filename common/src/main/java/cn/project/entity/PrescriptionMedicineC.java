@@ -2,7 +2,7 @@ package cn.project.entity;
 
 
 import java.io.Serializable;
-
+//检查处方
 public class PrescriptionMedicineC implements Serializable {
     private Integer id;
     private Integer checkItemId;

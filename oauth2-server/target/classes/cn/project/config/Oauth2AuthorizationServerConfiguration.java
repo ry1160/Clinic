@@ -7,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
@@ -22,6 +23,7 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 @Configuration
+@EnableAuthorizationServer
 public class Oauth2AuthorizationServerConfiguration extends
         AuthorizationServerConfigurerAdapter {
 
@@ -42,7 +44,7 @@ public class Oauth2AuthorizationServerConfiguration extends
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.allowFormAuthenticationForClients();
+        security.tokenKeyAccess("permitAll()").allowFormAuthenticationForClients();
     }
 
     @Override

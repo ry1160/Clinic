@@ -5,6 +5,7 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -25,17 +26,9 @@ public class HttpClientHelper {
 		CloseableHttpClient  httpClient = HttpClientBuilder.create().build();
 		CloseableHttpResponse  response = null;
 		try {
-			StringBuffer ssoCookies = new StringBuffer();
-			Cookie[] cookies = request.getCookies();
-			for (Cookie cookie : cookies) {
-				ssoCookies
-						.append(cookie.getName())
-						.append("=")
-						.append(cookie.getValue())
-						.append(";");
-			}
+			String ssoCookies = (String) request.getAttribute("ssoCookies");
 			HttpGet httpGet = new HttpGet(uri);
-			httpGet.addHeader("Cookie", ssoCookies.toString());
+			httpGet.addHeader("Cookie", ssoCookies);
 			response = httpClient.execute(httpGet);
 			HttpEntity httpEntity = response.getEntity();
 			//授权过期,需要用户重新授权
@@ -60,4 +53,6 @@ public class HttpClientHelper {
 		}
 		return new Response(ResponseEnum.ERROR).setResponseBody("出错了");
 	}
+
+
 }

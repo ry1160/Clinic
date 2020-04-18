@@ -9,10 +9,12 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 @Service
+@CacheConfig(cacheNames = "c1")
 public class DepartmentServiceImpl implements DepartmentService {
     @Resource
     DepartmentMapper departmentMapper;
     @Override
+    @Cacheable(key = "targetClass+':'+methodName")
     public List<Department> getAllDepartment() {
         return departmentMapper.getAllDepartment();
     }

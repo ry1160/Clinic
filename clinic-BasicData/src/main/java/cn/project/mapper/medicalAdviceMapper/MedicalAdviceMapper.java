@@ -6,7 +6,7 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
-@CacheConfig(cacheNames = "c1")
+@CacheConfig(cacheNames = "c2")
 public interface MedicalAdviceMapper {
     @Cacheable(key = "targetClass+':'+methodName")
     List<MedicalAdvice> getAllMedicalAdvice();

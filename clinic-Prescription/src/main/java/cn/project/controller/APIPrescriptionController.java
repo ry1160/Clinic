@@ -44,10 +44,6 @@ public class APIPrescriptionController {
 
     @GetMapping("/addPrescriptionMedicineX")
     @ApiOperation(value = "新增处方西药")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "prescriptionId",value = "处方ID",required = true),
-            @ApiImplicitParam(name = "prescriptionMedicineX",value = "西药处方",required = true)
-    })
     public Response addPrescriptionMedicineX(Integer prescriptionId,PrescriptionMedicineX prescriptionMedicineX){
         prescriptionService.addPrescriptionMedicineX(prescriptionMedicineX);
         prescriptionService.addPrescription_PrescriptionMedicineX(prescriptionId,prescriptionMedicineX.getId());
@@ -56,10 +52,6 @@ public class APIPrescriptionController {
 
     @GetMapping("/addPrescriptionMedicineZ")
     @ApiOperation(value = "新增处方中药")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "prescriptionId",value = "处方ID",required = true),
-            @ApiImplicitParam(name = "prescriptionMedicineZ",value = "中药处方",required = true)
-    })
     public Response addPrescriptionMedicineZ(Integer prescriptionId, PrescriptionMedicineZ prescriptionMedicineZ){
         prescriptionService.addPrescriptionMedicineZ(prescriptionMedicineZ);
         prescriptionService.addPrescription_PrescriptionMedicineZ(prescriptionId,prescriptionMedicineZ.getId());
@@ -68,11 +60,7 @@ public class APIPrescriptionController {
 
     @GetMapping("/addPrescriptionMedicineC")
     @ApiOperation(value = "新增处方检查项目")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "prescriptionId",value = "处方ID",required = true),
-            @ApiImplicitParam(name = "prescriptionMedicineC",value = "检查项目",required = true)
-    })
-    public Response addPrescriptionMedicineC(@RequestParam Integer prescriptionId, @RequestParam PrescriptionMedicineC prescriptionMedicineC){
+    public Response addPrescriptionMedicineC(Integer prescriptionId, PrescriptionMedicineC prescriptionMedicineC){
         prescriptionService.addPrescriptionMedicineC(prescriptionMedicineC);
         prescriptionService.addPrescription_PrescriptionMedicineC(prescriptionId,prescriptionMedicineC.getId());
         return new Response(ResponseEnum.SUCCESS);

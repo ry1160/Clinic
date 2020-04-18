@@ -8,8 +8,8 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @MapperScan(basePackages = "cn.project.mapper")
-@EnableOAuth2Sso
 @EnableCaching
+@EnableOAuth2Sso
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);

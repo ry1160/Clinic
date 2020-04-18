@@ -6,7 +6,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableAuthorizationServer
+
 @EnableSwagger2
 public class Application {
     public static void main(String[] args) {

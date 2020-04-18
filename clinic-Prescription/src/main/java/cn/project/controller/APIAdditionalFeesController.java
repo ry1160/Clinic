@@ -10,6 +10,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @Api(tags = "负责调用附加费用控住器")
@@ -27,7 +29,11 @@ public class APIAdditionalFeesController {
     @GetMapping("/addAdditionalFees")
     @ApiOperation(value = "新增附加费用")
     public Response addAdditionalFees(Prescription_AdditionalFees prescription_additionalFees){
-        return httpClientHelper.get("http://localhost:8082/additionalFees/addAdditionalFees?prescriptionId="+prescription_additionalFees.getPrescriptionId()
-                +"&additionfeesId="+prescription_additionalFees.getAdditionfeesId()+"&prescriptionTypeId="+prescription_additionalFees.getPrescriptionTypeId()+"&quantity="+prescription_additionalFees.getQuantity());
+        Map<String,Object> map = new HashMap<>();
+        map.put("prescriptionId",prescription_additionalFees.getPrescriptionId());
+        map.put("additionfeesId",prescription_additionalFees.getAdditionfeesId());
+        map.put("prescriptionTypeId",prescription_additionalFees.getPrescriptionTypeId());
+        map.put("quantity",prescription_additionalFees.getQuantity());
+        return null;//httpClientHelper.post("http://localhost:8082/additionalFees/addAdditionalFees",map);
     }
 }

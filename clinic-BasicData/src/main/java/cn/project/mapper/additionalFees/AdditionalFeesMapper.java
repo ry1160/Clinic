@@ -10,7 +10,7 @@ import org.springframework.security.core.parameters.P;
 
 import javax.annotation.Resource;
 import java.util.List;
-@CacheConfig(cacheNames = "c1")
+@CacheConfig(cacheNames = "c2")
 public interface AdditionalFeesMapper {
     @Cacheable(key = "targetClass+':'+methodName")
     List<AdditionalFees> getAllAdditionalFees();
