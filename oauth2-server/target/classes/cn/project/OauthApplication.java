@@ -6,7 +6,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 public class OauthApplication {
+
     public static void main(String[] args) {
-        SpringApplication.run(OauthApplication.class,args);
+        SpringApplication.run(OauthApplication.class, args);
     }
 }
