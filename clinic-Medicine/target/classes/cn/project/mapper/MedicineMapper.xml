@@ -37,4 +37,8 @@
             </if>
         </where>
     </select>
+
+    <select id="getMedicineUsage" resultType="medicineUsage">
+        select * from medicineusage
+    </select>
 </mapper>

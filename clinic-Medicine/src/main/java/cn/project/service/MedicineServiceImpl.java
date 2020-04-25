@@ -1,9 +1,6 @@
 package cn.project.service;
 
-import cn.project.entity.CheckItem;
-import cn.project.entity.CheckItemType;
-import cn.project.entity.Medicine;
-import cn.project.entity.MedicineType;
+import cn.project.entity.*;
 import cn.project.mapper.MedicineMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -49,5 +46,10 @@ public class MedicineServiceImpl implements MedicineService {
         List<CheckItem> list = medicineMapper.getAllCheckItem(itemTypeId,nameOrPinYin,pageNo,pageSize);
         PageInfo<CheckItem> pageInfo = new PageInfo<>(list);
         return pageInfo;
+    }
+
+    @Override
+    public List<MedicineUsage> getMedicineUsage() {
+        return medicineMapper.getMedicineUsage();
     }
 }

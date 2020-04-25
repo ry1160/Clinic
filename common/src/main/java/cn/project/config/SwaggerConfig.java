@@ -21,7 +21,7 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any())
                 .build().apiInfo(new ApiInfoBuilder()
                 .description("诊所管理系统")
-                .contact(new Contact("付烽","https://github.com/lenve","wangsong0210@gmail.com"))
+                .contact(new Contact("荣耀","https://github.com/ry1160","1160458154@qq.com"))
                 .version("v1.0")
                 .title("API测试文档")
                 .license("Apache2.0")
